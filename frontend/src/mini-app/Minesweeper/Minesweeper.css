@@ -1,0 +1,27 @@
+.mine{
+    display: block;
+    min-height: 86.5vh;
+    margin-top: -100px;
+    padding-top: 100px;
+    background-color: palevioletred;
+  }
+.mine .cell{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border: 2px solid black;
+    font-size: 20px;
+    position: relative;
+    background-color: white;
+}
+.mine .row{
+    display: block;
+    line-height: 0;
+    font-size: 0;
+}
+.mine .cell div{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

@@ -1,0 +1,10 @@
+.pomodoro{
+    display: block;
+    height: 86.5vh;
+    margin-top: -100px;
+    padding-top: 100px;
+}
+
+.pomodoro .clock{
+    font-size: 50px;
+}

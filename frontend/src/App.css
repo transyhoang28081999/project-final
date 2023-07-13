@@ -1,0 +1,76 @@
+.header{
+  padding-inline: 10px;
+
+}
+.header .header-container{
+  display: inline-block;
+  width: 200px;
+  height: 60px;
+}
+.header .title{
+  display: flex;
+  align-items: center;
+  margin-top: 13px;
+}
+.header .super-app{
+  padding-left: 10px;
+  color: white;
+}
+/* Container */
+* {
+  margin: 0;
+  padding: 0;
+}
+.container {
+  min-height: 100vh;
+}
+.routes{
+  display: inline-block;
+  margin-top: 100px;
+  text-align: center;
+  width: 100%;
+}
+/* Main Header*/
+.main-header{
+  display: flex;
+  align-items: center;
+  justify-content: right;
+}
+.main-header .hello{
+  display: inline-block;
+  padding-left: 10px;
+  color: white;
+  font-size: 24px;
+  width: 250px;
+  text-align: right;
+}
+.main-header svg{
+  display: inline-block;
+  text-align: right;
+  padding-left: 10px;
+}
+/*Footer*/
+.footer {
+  text-align: center;
+}
+/* Home */
+.home{
+  display: block;
+  height: 86.5vh;
+  margin-top: -100px;
+  padding-top: 100px;
+  background-color: palevioletred;
+}
+.home .card{
+  display: inline-block;
+  width: 600px;
+
+}
+
+.hello-world{
+  display: block;
+  min-height: 86.5vh;
+  margin-top: -100px;
+  padding-top: 100px;
+  background-color: rgb(121, 90, 142);
+}
