@@ -5,8 +5,8 @@
     padding-top: 100px;
     background-color: palevioletred;
   }
-  .big-quotes .card{
-    display: inline-block;
-    width: 600px;
-    margin: 30px 0;
-  }
+.big-quotes .card{
+  display: inline-block;
+  width: 600px;
+  margin: 30px 0;
+}

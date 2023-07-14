@@ -74,6 +74,7 @@ const Minesweeper = ({ lang }) => {
 
     setField(mineField);
   }, [mineFieldWidth, mineFieldHeight, mineNum, keepGoin]);
+  
   const spread = (x, y) => {
     if (mineField[x][y].isSpread) return;
     mineField[x][y].isSpread = true;
