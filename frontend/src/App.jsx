@@ -13,7 +13,7 @@ import Minesweeper from "./mini-app/Minesweeper/Minesweeper";
 import BigQuotes from "./mini-app/BigQuotes/BigQuotes";
 import { Icon } from "@iconify/react";
 import CelticIcon from "./CelticIcon";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import LanguageSwitcher from "./LanguageSwitcher/LanguageSwitcher";
 import tr from "./translate";
 
@@ -21,25 +21,25 @@ const { Text, Title } = Typography;
 
 const App = () => {
   const [lang, setLang] = useState("vi");
-  const [token, setToken] = useState("")
+  const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhvYW5nIiwiY29tcGFueSI6IlNhbXN1bmcgU0RTIiwicG9zaXRpb24iOiJJVCBFbmdpbmVlcnMiLCJpYXQiOjE2ODkzMTg0MTF9.3ecuhnIbyWOj8tIMapD04FyngCPlBIHRkyhVA2Cvu-s";
+  // const [token, setToken] = useState("");
   // let token = ""
-  useEffect(() => {
-    if(token !== "") return
-    const takeToken = async () => {
-      const res = await fetch("http://localhost:3000/authenticate", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Connection": "keep-alive"
-        },
-        body: JSON.stringify({ username: "hoang", password: "h1234" }),
-      })
-      const data = await res.json()
-      setToken(data.token)
-      // token = data.token
-    }
-    takeToken()
-  }, [token])
+  // useEffect(() => {
+  //   if (token !== "") return;
+  //   const takeToken = async () => {
+  //     const res = await fetch("http://localhost:3000/authenticate", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify({ username: "hoang", password: "h1234" }),
+  //     });
+  //     const data = await res.json();
+  //     setToken(data.token);
+  //     // token = data.token
+  //   };
+  //   takeToken();
+  // }, [token]);
 
   const items = [
     {
@@ -96,33 +96,57 @@ const App = () => {
                   </Title>
                 </Link>
               </Space>
+              {/* <Button
+                type="primary"
+                onClick={toggleCollapsed}
+              >
+                {collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
+              </Button> */}
             </Header>
-            <Menu items={items} />
+            <Menu items={items} mode="inline" />
           </Sider>
           <Content>
             <Header className="main-header">
-                <LanguageSwitcher
-                  lang={lang}
-                  languages={[
-                    { lang: "vi", label: "VIE" },
-                    { lang: "en", label: "ENG" },
-                  ]}
-                  onClick={(newLang) => setLang(newLang)}
-                />
-                <CelticIcon size={36} />
-                <div className="hello">{tr('Hi, Tran Sy Hoang',lang )}</div>
+              <LanguageSwitcher
+                lang={lang}
+                languages={[
+                  { lang: "vi", label: "VIE" },
+                  { lang: "en", label: "ENG" },
+                ]}
+                onClick={(newLang) => setLang(newLang)}
+              />
+              <CelticIcon size={36} />
+              <div className="hello">{tr("Hi, Tran Sy Hoang", lang)}</div>
             </Header>
             <Space className="routes">
               <Routes>
                 <Route path="/">
-                  <Route index element={<Home lang={lang} token={token}/>} />
-                  <Route path="/hello-world" element={<HelloWorld lang={lang}/>} />
-                  <Route path="/unit-converter" element={<UnitConverter lang={lang}/>} />
-                  <Route path="/chess-board" element={<ChessBoard lang={lang}/>} />
-                  <Route path="/calculator" element={<Calculator lang={lang}/>} />
-                  <Route path="/pomodoro" element={<Pomodoro lang={lang}/>} />
-                  <Route path="/minesweeper" element={<Minesweeper lang={lang}/>} />
-                  <Route path="/big-quotes" element={<BigQuotes lang={lang} token={token}/>} />
+                  <Route index element={<Home lang={lang} token={token} />} />
+                  <Route
+                    path="/hello-world"
+                    element={<HelloWorld lang={lang} />}
+                  />
+                  <Route
+                    path="/unit-converter"
+                    element={<UnitConverter lang={lang} />}
+                  />
+                  <Route
+                    path="/chess-board"
+                    element={<ChessBoard lang={lang} />}
+                  />
+                  <Route
+                    path="/calculator"
+                    element={<Calculator lang={lang} />}
+                  />
+                  <Route path="/pomodoro" element={<Pomodoro lang={lang} />} />
+                  <Route
+                    path="/minesweeper"
+                    element={<Minesweeper lang={lang} />}
+                  />
+                  <Route
+                    path="/big-quotes"
+                    element={<BigQuotes lang={lang} token={token} />}
+                  />
                 </Route>
               </Routes>
             </Space>

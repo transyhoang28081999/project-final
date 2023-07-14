@@ -6,7 +6,7 @@ const LanguageSwitcher = ({ lang, languages, onClick }) => {
 
     function getFlag(lang) {
         return <Avatar size={16} shape="circle" 
-                src={`/src/LanguageSwitcher/flags/${lang}-16x16.png`}/>
+                src={`./src/LanguageSwitcher/flags/${lang}-16x16.png`}/>
     }
 
     const menuItems = languages.map(item => ({
@@ -30,7 +30,7 @@ const LanguageSwitcher = ({ lang, languages, onClick }) => {
                         verticalAlign: "text-bottom",
                         border: '1px solid blue'
                     }}
-                    src={`/src/LanguageSwitcher/flags/${lang}-16x16.png`} />
+                    src={`./src/LanguageSwitcher/flags/${lang}-16x16.png`} />
                 <Text style={{
                     display: 'inline-block',
                     width: '2em',

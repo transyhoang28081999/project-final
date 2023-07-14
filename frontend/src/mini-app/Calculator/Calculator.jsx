@@ -21,31 +21,34 @@ const Calculator = ({lang}) => {
     }
 
     const PoNeNum = () => {
-        if(input[0] === "-") setInput(input.slice(1))
-        else setInput("-" + input)
+        if(input[0] === "-") {setInput(input.slice(1))}
+        else {setInput("-" + input)}
     }
 
     const addOperator = (value) => {
+        if(operator !== "") return
         setOperator(value)
-        setPrevNumber(input)
         setInput("")
+        if(result === 0) setPrevNumber(input)
+        else setPrevNumber(result)
     }
 
     const clear = () => {
         setInput("")
         setOperator("")
         setPrevNumber("")
+        setResult(0)
     }
 
     const evaluate = () => {
-        if(operator === "+") setResult(+prevNumber + +input)
-        if(operator === "-") setResult(+prevNumber - +input)
-        if(operator === "x") setResult(+prevNumber * +input)
-        if(operator === "/") setResult(+prevNumber / +input)
+        if(operator === "+") {setResult(Math.round((+prevNumber + +input) * 1000000) / 1000000)}
+        if(operator === "-") {setResult(Math.round((+prevNumber - +input) * 1000000) / 1000000)}
+        if(operator === "x") {setResult(Math.round((+prevNumber * +input) * 1000000) / 1000000)}
+        if(operator === "/") {setResult(Math.round((+prevNumber / +input) * 1000000) / 1000000)}
 
         setOperator("")
-        setInput(prevNumber + " " + operator + " " + input + " =")
-        setPrevNumber("")
+        setInput(prevNumber + " " + operator + " " + input + " = ")
+        setPrevNumber(input)
     }
 
     const items = [
