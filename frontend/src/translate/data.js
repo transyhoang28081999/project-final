@@ -67,6 +67,9 @@ export default {
     },
     "Number of Quotes:": {
         vi: "Số đề mục :"
+    },
+    "Main menu": {
+        vi: "Trang chủ"
     }
 
 }
